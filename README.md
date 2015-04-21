@@ -10,14 +10,14 @@ This Docker image contains only a static version of [DASH](http://gondor.apana.o
 
 To build a minimal Docker image, you may begin with `scratch`, and then add something (usually *static binary files* without any runtime dependency) into it.
 
-Sometimes we'd also like to put *simple wrapper scripts* into the image, too.  Most people will begin with base images such as [`busybox`](https://registry.hub.docker.com/_/busybox/), [`progrium/busybox`](https://registry.hub.docker.com/u/progrium/busybox/), or [`alpine`](https://registry.hub.docker.com/_/alpine/).  However, even the BusyBox itself can be slimed down further, since the only thing needed here is a bash-compatible shell to interpret and execute our `*.sh` files.
+Sometimes we'd also like to put *simple wrapper scripts* into the image, too.  Most people will begin with base images such as [`busybox`](https://registry.hub.docker.com/_/busybox/), [`progrium/busybox`](https://registry.hub.docker.com/u/progrium/busybox/), or [`alpine`](https://registry.hub.docker.com/_/alpine/).  However, even the BusyBox itself can be slimed down further, since the only thing needed here is a sh-compatible shell to interpret and execute our `*.sh` files.
 
 For this case, I build a minimal Docker base image that contains only a statically linked program: [DASH](http://gondor.apana.org.au/~herbert/dash/) (“the Debian Almquist Shell”). To be more friendly to derived work, I also replace the only GPLv2 part in DASH (the `mksignames.c` file) with an MIT-style data source: [“SIGNAL(7) in Linux Programmer’s Manual”](http://man7.org/linux/man-pages/man7/signal.7.html).
 
 
 ## Features
 
-- Highly compatible with bash.
+- Highly compatible with "sh" (Bourne Shell).
 
 - Small (about 1.4 MB).
 
