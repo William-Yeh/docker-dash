@@ -1,6 +1,9 @@
 Docker image for static DASH 
 ============
 
+[![Build Status](https://travis-ci.org/William-Yeh/docker-dash.svg?branch=master)](https://travis-ci.org/William-Yeh/docker-dash)
+
+
 Repository name in Docker Hub: **[williamyeh/dash](https://registry.hub.docker.com/u/williamyeh/dash/)**
 
 This Docker image contains only a static version of [DASH](http://gondor.apana.org.au/~herbert/dash/) (“the Debian Almquist Shell”).

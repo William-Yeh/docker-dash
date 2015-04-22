@@ -1,0 +1,15 @@
+install:
+  - curl -sLo - https://github.com/moul/travis-docker/raw/master/install.sh | sh -xe
+
+script:
+  - echo "==> Clean up rootfs.tar.gz in advance..."
+  - rm dash-rootfs.tar.gz
+
+  - echo "==> Generating rootfs.tar.gz ..."
+  - ./run 'docker build -t rootfs build-rootfs  &&  docker run -v $(pwd):/data rootfs'
+
+  - echo "==> Inspecting the newly-generated rootfs.tar.gz ..."
+  - tar ztvf dash-rootfs.tar.gz
+
+  - echo "==> Building the main Docker image..."
+  - ./run 'docker build -t dash .  &&  docker run dash sh -c "pwd"'

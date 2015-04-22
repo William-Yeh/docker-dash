@@ -1,17 +1,21 @@
 Building rootfs for static DASH
 ===
 
-## Build it on Linux
+## Build it
 
-```bash
-$ ./build.sh
-```
+You may choose to build it with either Docker or Vagrant.
 
-## Build it on Vagrant
+- Build it with Docker:
 
-```bash
-$ vagrant up
-```
+  ```bash
+  $ docker-compose up
+  ```
+
+- Build it with Vagrant:
+
+  ```bash
+  $ vagrant up
+  ```
 
 ## Done!
 
